@@ -1,13 +1,16 @@
 //import logo from './logo.svg';
 import "./App.css";
 import Navbar from "./components/Navbar";
-import textForms from "./components/textForms";
+import textForms from "./components/TextForms";
 
 function App() {
   return (
     <>
       <Navbar title="textUtils" aboutText="About" />
-      <textForms />
+      <div className="container">
+        {" "}
+        <TextForms />
+      </div>
     </>
   );
 }

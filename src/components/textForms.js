@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function textForms() {
+export default function TextForms() {
   return (
     <>
       <div class="mb-3">
