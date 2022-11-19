@@ -15,6 +15,7 @@ export default function TextForms(props) {
 
   const handleReplace = () => {
     console.log("Text was Replaced" + text);
+    
     let newText = text.replace("this", "that");
     setText(newText);
   };
