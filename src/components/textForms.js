@@ -13,6 +13,27 @@ export default function TextForms(props) {
     setText(newText);
   };
 
+  const handleReplace = () => {
+    console.log("Text was Replaced" + text);
+    //     let element="this";
+    let newText = text.replace("this", "that");
+    setText(newText);
+  };
+
+  const handleSlicing = () => {
+    console.log("Text was Sliced" + text);
+    let num1 = 4;
+    let num2 = 9;
+    let newText = text.slice(num1, num2);
+    setText(newText);
+  };
+
+  const handleClick = () => {
+    console.log("Text was erased " + text);
+    let newText = " ";
+    setText(newText);
+  };
+
   const handleOnChange = (event) => {
     console.log("On Change");
     setText(event.target.value);
@@ -38,6 +59,15 @@ export default function TextForms(props) {
           </button>
           <button className="btn btn-primary mx-3" onClick={handleLowClick}>
             Convert to lowercase
+          </button>
+          <button className="btn btn-primary" onClick={handleClick}>
+            Erase Text
+          </button>
+          <button className="btn btn-primary mx-3" onClick={handleReplace}>
+            Replace text
+          </button>
+          <button className="btn btn-primary my-2" onClick={handleSlicing}>
+            Slice text(4,9)
           </button>
         </div>
       </div>
