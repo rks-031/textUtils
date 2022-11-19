@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import "./App.css";
 import Navbar from "./components/Navbar";
-import textForms from "./components/TextForms";
+import TextForms from "./components/TextForms";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Navbar title="textUtils" aboutText="About" />
       <div className="container">
         {" "}
-        <TextForms />
+        <TextForms heading="Enter the text to analyze below" />
       </div>
     </>
   );
