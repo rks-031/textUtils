@@ -16,19 +16,27 @@ export default function TextForms(props) {
 
   return (
     <>
-      <div className="mb-3">
-        <h1>{props.heading}</h1>
-        <textarea
-          className="form-control"
-          value={text}
-          onChange={handleOnChange}
-          id="myBox"
-          rows="8"
-        ></textarea>
-        <br />
-        <button className="btn btn-primary" onClick={handleUpClick}>
-          Convert to uppercase
-        </button>
+      <div className="container">
+        <div className="mb-3">
+          <h1>{props.heading}</h1>
+          <textarea
+            className="form-control"
+            value={text}
+            onChange={handleOnChange}
+            id="myBox"
+            rows="8"
+          ></textarea>
+          <br />
+          <button className="btn btn-primary" onClick={handleUpClick}>
+            Convert to uppercase
+          </button>
+        </div>
+      </div>
+      <div className="conatiner my-3">
+        <h1>your text summary</h1>
+        <p>
+          {text.split(" ").length} words and {text.length} characters
+        </p>
       </div>
     </>
   );
