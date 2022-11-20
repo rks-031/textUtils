@@ -6,12 +6,14 @@ import TextForms from "./components/TextForms";
 import React, { useState } from "react";
 
 function App() {
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState("light");
   const toggleMode = () => {
     if (mode === "light") {
-      setMode = "dark";
+      setMode("dark");
+      document.body.style.backgroundColor = "grey";
     } else {
-      setMode = "light";
+      setMode("light");
+      document.body.style.backgroundColor = "white";
     }
   };
   return (
@@ -19,7 +21,7 @@ function App() {
       {/* <Navbar title="textUtils" aboutText="About" /> */}
       <Navbar title="textUtils" mode={mode} toggleMode={toggleMode} />
       <div className="container my-3">
-        <TextForms heading="Enter the text to analyze below" />
+        <TextForms mode={mode} heading="Enter the text to analyze below" />
         {/* <About /> */}
       </div>
     </>
