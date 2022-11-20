@@ -24,11 +24,6 @@ export default function TextForms(props) {
       text.replace("that", "this");
       setText(newText2);
     }
-
-    // let newText1 = text.replace("this", "that");
-    // setText(newText1);
-    // let newText2 = text.replace("that", "this");
-    // setText(newText2);
   };
 
   const handleSlicing = () => {
