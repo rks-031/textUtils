@@ -4,28 +4,31 @@ export default function About() {
   const [myStyle, setMyStyle] = useState({
     color: "black",
     backgroundColor: "white",
+    border: "2px solid black",
   });
 
   const [btnText, setBtnText] = useState("Enable Dark Mode");
 
   const toggleStyle = () => {
-    if (myStyle.color == "black") {
+    if (myStyle.color === "black") {
       setMyStyle({
         color: "white",
         backgroundColor: "black",
+        border: "2px solid white",
       });
       setBtnText("Enable Light Mode");
     } else {
       setMyStyle({
         color: "black",
         backgroundColor: "white",
+        border: "2px solid black",
       });
       setBtnText("Enable Dark Mode");
     }
   };
 
   return (
-    <div className="container" style={myStyle}>
+    <div className="container my-3" style={myStyle}>
       <h1 className="my-3">About Us</h1>
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
