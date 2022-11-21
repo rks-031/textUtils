@@ -22,12 +22,14 @@ function App() {
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
-      document.body.style.backgroundColor = "grey";
+      document.body.style.backgroundColor = "#2E2E6A";
       showAlert("Dark mode enabled", "success");
+      document.title = "TextUtils - Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode enabled", "success");
+      document.title = "TextUtils - Light Mode";
     }
   };
   return (
