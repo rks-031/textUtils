@@ -5,25 +5,32 @@ export default function TextForms(props) {
     console.log("Upper case was clicked " + text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to Uppercase", "success");
   };
 
   const handleLowClick = () => {
     console.log("Upper case was clicked " + text);
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Lowercase", "success");
   };
 
   const handleReplace = () => {
     console.log("Text was Replaced" + text);
-    let newText1 = "this";
-    let newText2 = "that";
-    if (newText1) {
-      text.replace("this", "that");
-      setText(newText1);
-    } else if (newText2) {
-      text.replace("that", "this");
-      setText(newText2);
-    }
+    //let newText1 = "this";
+    // let newText2 = "that";
+    // if (newText1) {
+    //   text.replace("this", "that");
+    //   setText(newText1);
+    // } else if (newText2) {
+    //   text.replace("that", "this");
+    //   setText(newText2);
+    // }
+    // while ({ text } != "\0") {
+    let newText = text.replace("this", "that");
+    setText(newText);
+    //}
+    props.showAlert("Text replaced successfully", "success");
   };
 
   const handleSlicing = () => {
@@ -32,12 +39,14 @@ export default function TextForms(props) {
     let num2 = 9;
     let newText = text.slice(num1, num2);
     setText(newText);
+    props.showAlert("Sliced everything except [4..9]", "success");
   };
 
   const handleClick = () => {
     console.log("Text was erased " + text);
     let newText = " ";
     setText(newText);
+    props.showAlert("Text erased", "success");
   };
 
   const handleOnChange = (event) => {
@@ -82,7 +91,7 @@ export default function TextForms(props) {
             Replace text
           </button>
           <button className="btn btn-primary my-2" onClick={handleSlicing}>
-            Slice text(4,9)
+            Slice text[4...9]
           </button>
         </div>
       </div>
