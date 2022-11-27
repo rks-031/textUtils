@@ -5,12 +5,7 @@ import Navbar from "./components/Navbar";
 import TextForms from "./components/TextForms";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -30,12 +25,12 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#2E2E6A";
       showAlert("Dark mode enabled", "success");
-      document.title = "TextUtils - Dark Mode";
+      // document.title = "TextUtils - Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode enabled", "success");
-      document.title = "TextUtils - Light Mode";
+      // document.title = "TextUtils - Light Mode";
     }
   };
   return (
@@ -44,14 +39,14 @@ function App() {
       <Alert alert={alert} />
       <div className="container my-3">
         <Routes>
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<About mode={mode} />} />
           <Route
             exact
             path="/home"
             element={
               <TextForms
                 showAlert={showAlert}
-                heading="Enter the text to analyze below"
+                heading="Try textUtils- Word counter, Character-counter, Erase text....."
                 mode={mode}
               />
             }

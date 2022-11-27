@@ -17,16 +17,6 @@ export default function TextForms(props) {
 
   const handleReplace = () => {
     console.log("Text was Replaced" + text);
-    //let newText1 = "this";
-    // let newText2 = "that";
-    // if (newText1) {
-    //   text.replace("this", "that");
-    //   setText(newText1);
-    // } else if (newText2) {
-    //   text.replace("that", "this");
-    //   setText(newText2);
-    // }
-    // while ({ text } != "\0") {
     let newText = text.replace("this", "that");
     setText(newText);
     //}
@@ -65,32 +55,52 @@ export default function TextForms(props) {
         }}
       >
         <div className="mb-3">
-          <h1>{props.heading}</h1>
+          <h1 className="mb-2">{props.heading}</h1>
           <textarea
             className="form-control"
             value={text}
             onChange={handleOnChange}
             style={{
-              backgroundColor: props.mode === "light" ? "white" : "grey",
+              backgroundColor: props.mode === "light" ? "white" : "#345b93",
               color: props.mode === "light" ? "black" : "white",
             }}
             id="myBox"
             rows="8"
           ></textarea>
           <br />
-          <button className="btn btn-primary" onClick={handleUpClick}>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleUpClick}
+          >
             Convert to uppercase
           </button>
-          <button className="btn btn-primary mx-3" onClick={handleLowClick}>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleLowClick}
+          >
             Convert to lowercase
           </button>
-          <button className="btn btn-primary" onClick={handleClick}>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleClick}
+          >
             Erase Text
           </button>
-          <button className="btn btn-primary mx-3" onClick={handleReplace}>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleReplace}
+          >
             Replace text
           </button>
-          <button className="btn btn-primary my-2" onClick={handleSlicing}>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleSlicing}
+          >
             Slice text[4...9]
           </button>
         </div>
@@ -103,11 +113,22 @@ export default function TextForms(props) {
       >
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+          words and {text.length} characters
         </p>
-        <p>{0.008 * text.split(" ").length} minutes to read</p>
+        <p>
+          {0.008 *
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length}{" "}
+          minutes to read
+        </p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Nothing to preview"}</p>
       </div>
     </>
   );
