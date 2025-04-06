@@ -43,7 +43,7 @@ TextUtils is a React-based web application that provides a variety of text manip
     ```
 
 ## File Structure
-
+```bash
 textUtils/
 ├── public/                 # Static files
 │   ├── index.html          # Main HTML file
@@ -64,6 +64,7 @@ textUtils/
 ├── .gitignore              # Git ignore file
 ├── package.json            # Project metadata and dependencies
 └── README.md               # Project documentation
+```
 
 ## Usage
 
